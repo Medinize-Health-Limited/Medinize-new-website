@@ -1,16 +1,16 @@
 {
-  "name": "@vueform/nuxt-starter",
+  "name": "AAIRTA",
   "version": "1.0.0",
   "private": false,
-  "description": "Vueform Nuxt 2 + Tailwind CSS 3 Boilerplate",
+  "description": "Academy of Africana Indigenous Religions, Theology and Arts website project (AAIRTA)",
   "licence": "MIT",
-  "author": "Adam Berecz <adam@vueform.com>",
+  "author": "Marquis Abah",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vueform/nuxt-starter.git"
+    "url": ""
   },
   "bugs": {
-    "url": "https://github.com/vueform/nuxt-starter/issues"
+    "url": ""
   },
   "scripts": {
     "dev": "nuxt",
@@ -26,15 +26,23 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/pwa": "^3.3.5",
-    "@vueform/vueform": "^1.2.6",
     "axios": "^0.25.0",
+    "bootstrap": "^5.2.3",
+    "bootstrap-vue": "^2.23.1",
     "core-js": "^3.19.3",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "nuxt": "^2.15.8",
+    "pusher-js": "^8.0.2",
+    "robin-vue": "^0.5.2",
     "sass-loader": "^10.2.1",
     "vue": "^2.6.14",
+    "vue-marquee-slider": "^1.0.6",
     "vue-server-renderer": "^2.6.14",
+    "vue-slick-carousel": "^1.0.6",
+    "vue-socket.io": "^3.0.10",
+    "vue-ssr-carousel": "^2.1.0",
+    "vue-sweetalert2": "^5.0.5",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0"
   },

@@ -1,18 +1,14 @@
 <template>
-  <div id="app">
-    <VueformDemo></VueformDemo>
-  </div>
+  <main>
+  </main>
 </template>
 
 <script>
-  import VueformDemo from './../components/VueformDemo'
-
-  export default {
-    name: 'App',
-    components: {
-      VueformDemo
-    }
-  }
+export default {
+  components: {
+  },
+};
 </script>
-
-<style></style>
+    LatestNews
+<style>
+</style>
