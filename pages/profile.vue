@@ -1,7 +1,7 @@
 <template>
   <div class="bg-black bg-opacity-25">
     <div
-      class="background w-full h-full bg-blend-overlay bg-opacity-50 bg-gray-400 pt-10 rounded-lg"
+      class="background w-full h-full bg-blend-overlay bg-opacity-50 bg-gray-400 pt-10 rounded-lg p-3"
     >
       <keep-alive>
         <component

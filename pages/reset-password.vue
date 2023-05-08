@@ -1,13 +1,8 @@
 <template>
   <div class="bg-black bg-opacity-25">
-    <div
-      class="background w-full h-full bg-blend-overlay bg-opacity-50 bg-gray-400 pt-10 rounded-lg"
-    >
+    <div class="background w-full h-full bg-blend-overlay bg-opacity-50 bg-gray-400 pt-10 rounded-lg p-3">
       <keep-alive>
-        <component
-          :is="resetPasswordSteps[currentStep].component"
-          @goBack="goBack()"
-        />
+        <component :is="resetPasswordSteps[currentStep].component" @goBack="goBack()" @reset-success="resetSuccess" />
       </keep-alive>
     </div>
   </div>
@@ -23,7 +18,7 @@ export default {
   },
   data() {
     return {
-      currentStep: 1,
+      currentStep: 0,
       resetPasswordSteps: [
         {
           title: "resetPasswordForm",
@@ -40,11 +35,12 @@ export default {
     this.setPageData();
   },
   methods: {
-    next() {
+    resetSuccess() {
       this.currentStep += 1;
     },
+
     setPageData() {
-      this.currentStep = 1;
+      this.currentStep = 0;
     },
   },
 };

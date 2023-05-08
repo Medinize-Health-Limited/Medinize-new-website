@@ -1,14 +1,10 @@
 <template>
   <div class="bg-black bg-opacity-25">
-    <div
-      class="background w-full h-full bg-blend-overlay bg-opacity-50 bg-gray-400 md:py-10 rounded-lg pt-2"
-    >
+    <div class="background w-full h-full bg-blend-overlay bg-opacity-50 bg-gray-400 pt-10 rounded-lg p-3">
       <keep-alive>
-        <component
-          :is="loginAuthSteps[currentStep].component"
-          @signupSuccess="signupSuccess"
-          @goBack="goBack()"
-        />
+        <component :is="loginAuthSteps[currentStep].component" @signupSuccess="next"
+          @emailVerificationSuccess="handleEmailVerificationSuccess" @goBack="goBack()"
+          @passwordCreationSuccess="handlePasswordCreationSuccess" />
       </keep-alive>
     </div>
   </div>
@@ -19,17 +15,6 @@ import SignupPage from "@/components/Signup/SignupPage.vue";
 import EmailConfirmation from "@/components/Signup/EmailConfirmation.vue";
 import CreatePassword from "@/components/Signup/CreatePassword.vue";
 export default {
-  beforeRouteEnter(to, from, next) {
-    if (process.client) {
-      const user = localStorage.getItem("currentUser");
-      this.user = user !== null ? JSON.parse(user) : ""
-      if (this.user.email) {
-        this.$router.push(from.path)
-      } else {
-        next()
-      }
-    }
-  },
   components: {
     SignupPage,
     EmailConfirmation,
@@ -38,7 +23,6 @@ export default {
   data() {
     return {
       currentStep: 0,
-      user: null,
       loginAuthSteps: [
         {
           title: "SignupForm",
@@ -59,18 +43,21 @@ export default {
     this.setPageData();
   },
   methods: {
-    signupSuccess() {
+    next() {
       this.currentStep += 1;
     },
-    setPageData() {
-      const user = localStorage.getItem("currentUser");
-      this.user = user !== null ? JSON.parse(user) : "";
-      if (this.user.email) {
-        this.$router.push("/sign-in");
-      } else {
-        return "";
-      }
+    previous() {
+      this.currentStep = 0;
     },
+    setPageData() {
+      this.currentStep = 0;
+    },
+    handleEmailVerificationSuccess() {
+      this.currentStep += 1
+    },
+    handlePasswordCreationSuccess() {
+      this.$router.push('/')
+    }
   },
 };
 </script>
@@ -80,6 +67,5 @@ export default {
   background-image: url("./assets/img/landing.svg");
   height: 100vh;
   width: 100vw;
-  object-fit: cover;
 }
 </style>
