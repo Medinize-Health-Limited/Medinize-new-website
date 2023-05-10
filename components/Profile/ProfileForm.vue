@@ -6,7 +6,7 @@
           <img src="@/assets/img/user_profile.svg" alt="">
         </div>
         <h1 class="text-center text-sm  font-light">
-          Welcome, <span class="font-bold">Samuel</span>
+          Welcome, <span class="font-bold">{{ user.first_name ?? 'User' }}</span>
         </h1>
         <p class="text-center  text-xs">
           Help us provide you with the best healthcare by filling the
@@ -103,6 +103,7 @@ export default {
     return {
       processing: false,
       errorMessage: '',
+      user : {},
       form: {
         gender: '',
         weight: '',
@@ -121,6 +122,10 @@ export default {
         this.form?.dob?.length &&
         this.form?.hmo_provider?.length)
     }
+  },
+  mounted(){
+   const user = localStorage.getItem('user');
+   this.user = user ? JSON.parse(user) : ''
   },
   methods: {
     handleSignup() {

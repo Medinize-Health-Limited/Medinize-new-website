@@ -11,7 +11,7 @@
             <div class="flex items-center space-x-3">
               <img src="@/assets/img/notification_bell.svg" alt="" class="h-7 w-7" />
               <img src="@/assets/img/user_profile.svg" alt="" class="h-7 w-7" />
-              <p class="text-sm tracking-wider text-gray-500">Samuel</p>
+              <p class="text-sm tracking-wider text-gray-500">{{ user.first_name ?? 'User' }}</p>
               <!-- <p class="cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
                   fill="none" stroke="#acb8b4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M6 9l6 6 6-6" />
@@ -106,8 +106,13 @@ export default {
   },
   data() {
     return {
-      showDropdown: false
+      showDropdown: false,
+      user: {}
     }
+  },
+  mounted() {
+    const user = localStorage.getItem('user');
+    this.user = user ? JSON.parse(user) : '';
   },
   methods: {
     toggleDropdownVisibility() {

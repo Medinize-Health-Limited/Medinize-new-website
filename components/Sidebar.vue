@@ -2,9 +2,9 @@
   <main>
     <div class="hidden md:block flex h-screen flex-col justify-between border-e bg-gray-50">
       <div class="px-4 py-6">
-        <span class="place-content-center">
-          <img src="@/assets/img/logo.svg" alt="">
-        </span>
+        <div class="place-content-center flex justify-center items-center">
+          <img src="@/assets/img/logo.jpg" alt="" class="rounded-full object-cover h-20">
+        </div>
 
         <nav aria-label="Main Nav" class="mt-6 flex flex-col space-y-6 hidden md:block">
           <nuxt-link :class="[$route.path === '/dashboard' ? 'bg-green-500 text-white' : '']" to="/dashboard"
@@ -75,7 +75,7 @@
     <div class="md:hidden flex justify-between px-3 py-2 items-center w-full">
       <div>
         <span class="place-content-center">
-          <img src="@/assets/img/logo.svg" alt="">
+          <img src="@/assets/img/logo.jpg" alt="" class="h-16"></img>
         </span>
       </div>
       <div>
@@ -93,8 +93,8 @@
       <b-sidebar id="sidebar-backdrop" no-header backdrop shadow width="380px">
         <template #default="{ hide }">
           <div class="flex justify-between items-center py-3 w-11/12 mx-auto">
-            <div class="">
-              <img src="@/assets/img/logo.svg" alt="">
+            <div class="w-full">
+              <img src="@/assets/img/logo.jpg" alt="" class="h-16">
             </div>
             <div>
               <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24"

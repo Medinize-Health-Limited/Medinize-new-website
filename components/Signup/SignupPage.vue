@@ -59,7 +59,7 @@
       <div class="space-y-2 w-full">
         <label class="text-gray-500 text-xs">Phone number</label>
         <div>
-          <input v-model="form.phone" type="tel" placeholder="Enter phone number"
+          <input v-model="form.phone_number" type="tel" placeholder="Enter phone number"
             class="outline-none px-3 py-3 bg-gray-100 text-xs border-gray-50 border-none focus:border-green-500 rounded-md w-full font-light">
         </div>
       </div>
@@ -73,8 +73,7 @@
       </div>
 
       <div class="pt-6">
-        <button :class="[!isFormValid || processing ? 'cursor-not-allowed opacity-25' : '']"
-          :disabled="!isFormValid || processing"
+        <button
           class="text-white text-sm md:py-3 py-2.5 rounded-lg text-center w-full bg-green-500">
           {{ processing ? "Processsing..." : " Sign Up" }}
         </button>
@@ -114,7 +113,7 @@ export default {
         first_name: '',
         last_name: '',
         email: '',
-        phone: '',
+        phone_number: '',
         password: '',
         dob: ''
       }
@@ -125,7 +124,7 @@ export default {
       return !!(this.form?.first_name?.length &&
         this.form?.last_name?.length &&
         this.form?.email?.length &&
-        this.form?.phone?.length &&
+        this.form?.phone_number?.length &&
         this.form?.dob?.length &&
         this.form?.password?.length)
     }
@@ -144,6 +143,15 @@ export default {
         .catch(() => {
           this.errorMessage = 'Something went wrong. Please try again!'
           this.$router.push('/')
+          const loggedUser = {
+            first_name: '',
+            last_name: '',
+            email: '',
+            phone: ''
+          }
+          if (process.client) {
+            localStorage.setItem('user', JSON.stringify(loggedUser))
+          }
           // this.$emit('signupSuccess')
         })
         .finally(() => {

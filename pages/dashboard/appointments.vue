@@ -612,7 +612,7 @@
                 terms and conditions
               </a>
               and
-              <a href="#" class="text-gray-700 underline">privacy policy</a>.
+              <nuxt-link to="/privacy-policy" class="text-gray-700 underline">privacy policy</nuxt-link>.
             </p>
           </div>
 
