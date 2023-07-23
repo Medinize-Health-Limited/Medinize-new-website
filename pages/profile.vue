@@ -1,13 +1,8 @@
 <template>
   <div class="bg-black bg-opacity-25">
-    <div
-      class="background w-full h-full bg-blend-overlay bg-opacity-50 bg-gray-400 pt-10 rounded-lg p-3"
-    >
+    <div class="background w-full h-full bg-blend-overlay bg-opacity-50 bg-gray-400 pt-10 rounded-lg p-3">
       <keep-alive>
-        <component
-          :is="profileUpdateSteps[currentStep].component"
-          @goBack="goBack()"
-        />
+        <component :is="profileUpdateSteps[currentStep].component" @profileUpdateSuccess="next" @goBack="goBack()" />
       </keep-alive>
     </div>
   </div>
@@ -23,6 +18,7 @@ export default {
   },
   data() {
     return {
+      user: {},
       currentStep: 0,
       profileUpdateSteps: [
         {
@@ -37,6 +33,13 @@ export default {
     };
   },
   mounted() {
+    const user = localStorage.getItem('user');
+    this.user = user ? JSON.parse(user) : '';
+    if (this.user) {
+      return
+    } else {
+      this.$router.push('/');
+    }
     this.setPageData();
   },
   methods: {

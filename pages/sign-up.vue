@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       currentStep: 0,
+      user: {},
       loginAuthSteps: [
         {
           title: "SignupForm",
@@ -40,11 +41,20 @@ export default {
     };
   },
   mounted() {
+    const user = localStorage.getItem('user');
+    console.log(user);
+    this.user = user ? JSON.parse(user) : '';
+    if (!this.user) {
+      return
+    } else {
+      this.$router.push('dashboard');
+    }
     this.setPageData();
   },
   methods: {
     next() {
-      this.currentStep += 1;
+      this.$router.push('/')
+      // this.currentStep += 1;
     },
     previous() {
       this.currentStep = 0;

@@ -1,6 +1,6 @@
 <template>
   <section class="sm:w-10/12 md:w-6/12  xl:w-4/12  mx-auto rounded-lg shadow-lg bg-white">
-    <div class="space-y-3 p-6 rounded-xl">
+    <form @submit.prevent="handleProfile" class="space-y-3 p-6 rounded-xl">
       <div class="space-y-3">
         <div class="flex justify-center items-center">
           <img src="@/assets/img/user_profile.svg" alt="">
@@ -17,7 +17,7 @@
       <div class="space-y-2 w-full">
         <label class="text-gray-500 text-xs">Date of birth *</label>
         <div>
-          <input v-model="form.dob" type="date" placeholder="Enter date"
+          <input v-model="form.date_of_birth" type="date" placeholder="Enter date"
             class="outline-none px-3 text-xs py-3 bg-gray-100 border-gray-50 border-none focus:border-green-500 rounded-md w-full font-light">
         </div>
       </div>
@@ -28,14 +28,11 @@
           <select name="gender" v-model="form.gender"
             class="outline-none px-3 text-xs py-3 bg-gray-100 border-gray-50 border-none focus:border-green-500 rounded-md w-full">
             <option value="" disabled selected hidden>Select an option</option>
-            <option value="male">
+            <option value="M">
               Male
             </option>
-            <option value="female">
+            <option value="F">
               Female
-            </option>
-            <option value="prefer not to say">
-              Prefer not to say
             </option>
           </select>
         </div>
@@ -84,7 +81,7 @@
       <div class="pt-4">
         <button :class="[!isFormValid || processing ? 'cursor-not-allowed opacity-25' : '']"
           :disabled="!isFormValid || processing"
-          class="text-white text-sm md:py-3 py-3 rounded-lg text-center w-full bg-green-500">
+          class="text-white text-sm py-2.5 rounded-lg text-center w-full bg-green-500">
           {{ processing ? "Processsing..." : "Continue" }}
         </button>
       </div>
@@ -92,24 +89,25 @@
       <p @click="$router.push('/dashboard')" class="text-center text-teal-500 text-xs cursor-pointer">
         I’ll do this later
       </p>
-    </div>
+    </form>
   </section>
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   name: 'ProfileForm',
   data() {
     return {
       processing: false,
       errorMessage: '',
-      user : {},
+      user: {},
       form: {
         gender: '',
         weight: '',
         height: '',
         hmo_provider: '',
-        dob: ''
+        date_of_birth: ''
       }
     }
   },
@@ -119,28 +117,29 @@ export default {
         this.form?.gender?.length &&
         this.form?.weight?.length &&
         this.form?.height?.length &&
-        this.form?.dob?.length &&
+        this.form?.date_of_birth?.length &&
         this.form?.hmo_provider?.length)
     }
   },
-  mounted(){
-   const user = localStorage.getItem('user');
-   this.user = user ? JSON.parse(user) : ''
+  mounted() {
+    const user = localStorage.getItem('user');
+    this.user = user ? JSON.parse(user) : ''
   },
   methods: {
-    handleSignup() {
+    handleProfile() {
+      delete this.form.date_of_birth
+      const dateOfBirth = moment.utc(this.form?.date_of_birth).format('YYYY-MM-DD')
+      const payload = {
+        ...this.form, token: this.user.token, date_of_birth: dateOfBirth
+      }
       this.processing = true
       this.$axios
-        .post('https://medinize-apis.onrender.com/signup/', this.form)
+        .post('https://medinize-apis.onrender.com/personal-info/', payload)
         .then((res) => {
-          this.$emit('signupSuccess')
-          if (process.client) {
-            localStorage.setItem('currentUser', JSON.stringify(res.data))
-          }
+          this.$emit('profileUpdateSuccess')
         })
         .catch(() => {
           this.errorMessage = 'Something went wrong. Please try again!'
-          this.$emit('signupSuccess')
         })
         .finally(() => {
           this.processing = false

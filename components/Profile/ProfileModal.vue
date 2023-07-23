@@ -14,16 +14,24 @@
       </p>
 
       <div class="w-11/12 mx-auto pb-6 md:pb-0">
-        <button
-          style="background-color: #13b859"
-          class="text-white py-2.5 rounded-lg text-center w-full text-sm md:text-base"
-        >
+        <button @click="redirectToDashboard" style="background-color: #13b859"
+          class="text-white py-2.5 rounded-lg text-center w-full text-sm md:text-base">
           Okay, got it
         </button>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  methods: {
+    redirectToDashboard () {
+      this.$router.push('/dashboard')
+    }
+  }
+}
+</script>
 
 <style scoped>
 .background {

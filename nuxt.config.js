@@ -21,8 +21,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // { src: '~/plugins/vuex-persist', ssr: false },
     '~/plugins/bootstrap-vue.client',
-    { src: '~/plugins/robin.js', mode: 'client' },
     { src: '~/plugins/v-calender.js', mode: 'client', ssr: false }
   ],
 
@@ -96,12 +96,12 @@ export default {
   pwa: {
     meta: {
       title: 'Medinize Accessible Health',
-      author: 'Trust x wallet website'
+      author: 'Marquis'
     },
     manifest: {
-      name: 'TRUST X WALLET',
-      short_name: 'Trust X Wallet',
-      description: 'TRUST X WALLET official website',
+      name: 'Medinize Accessible Health',
+      short_name: 'Medinize Accessible Health',
+      description: 'Innovating Health Services',
       lang: 'en',
       theme_color: '#8B4E96',
       background_color: '#8B4E96',

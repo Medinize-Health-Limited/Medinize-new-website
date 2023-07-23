@@ -3,7 +3,7 @@
     <div class="hidden md:block flex h-screen flex-col justify-between border-e bg-gray-50">
       <div class="px-4 py-6">
         <div class="place-content-center flex justify-center items-center">
-          <img src="@/assets/img/logo.jpg" alt="" class="rounded-full object-cover h-20">
+          <img src="@/assets/img/logo.png" alt="" class="rounded-full object-cover h-20">
         </div>
 
         <nav aria-label="Main Nav" class="mt-6 flex flex-col space-y-6 hidden md:block">
@@ -75,7 +75,7 @@
     <div class="md:hidden flex justify-between px-3 py-2 items-center w-full">
       <div>
         <span class="place-content-center">
-          <img src="@/assets/img/logo.jpg" alt="" class="h-16"></img>
+          <img src="@/assets/img/logo.png" alt="" class="h-16"></img>
         </span>
       </div>
       <div>
@@ -94,7 +94,7 @@
         <template #default="{ hide }">
           <div class="flex justify-between items-center py-3 w-11/12 mx-auto">
             <div class="w-full">
-              <img src="@/assets/img/logo.jpg" alt="" class="h-16">
+              <img src="@/assets/img/logo.png" alt="" class="h-16">
             </div>
             <div>
               <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24"
@@ -107,63 +107,71 @@
           </div>
 
           <div class="w-11/12 mx-auto">
+            <p v-if="user.length" class="tracking-wide font-medium text-gray-700">Hello, {{ user ? user.first_name : 'User' }}</p>
             <nav aria-label="Main Nav" class="mt-6 flex flex-col space-y-6">
               <nuxt-link :class="[$route.path === '/dashboard' ? 'bg-green-500 text-white' : '']" to="/dashboard"
-                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+                class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-gray-700">
                 <img src="@/assets/img/homeIcon.svg" alt="">
 
                 <span class="font-medium text-sm"> Home </span>
               </nuxt-link>
 
               <nuxt-link :class="[$route.path === '/dashboard/services' ? 'bg-green-500 text-white' : '']"
-                to="/dashboard/services" class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+                to="/dashboard/services" class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-gray-700">
                 <img src="@/assets/img/servicesIcon.svg" alt="">
 
                 <span class="font-medium text-sm"> Services </span>
               </nuxt-link>
 
               <nuxt-link :class="[$route.path === '/dashboard/appointments' ? 'bg-green-500 text-white' : '']"
-                to="/dashboard/appointments" class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+                to="/dashboard/appointments" class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-gray-700">
                 <img src="@/assets/img/appointmentsIcon.svg" alt="">
 
                 <span class="font-medium text-sm"> Appointments </span>
               </nuxt-link>
 
-              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-gray-700">
                 <img src="@/assets/img/recordsIcon.svg" alt="">
 
                 <span class="font-medium text-sm"> Records </span>
               </a>
 
-              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-gray-700">
                 <img src="@/assets/img/medicalTimelineIcon.svg" alt="">
 
                 <span class="font-medium text-sm"> Medical Timeline </span>
               </a>
 
-              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-gray-700">
                 <img src="@/assets/img/orderHistoryIcon.svg" alt="">
 
                 <span class="font-medium text-sm"> Order History </span>
               </a>
 
-              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-gray-700">
                 <img src="@/assets/img/communityIcon.svg" alt="">
 
                 <span class="font-medium text-sm"> Community </span>
               </a>
 
-              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+              <a href="#" class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-gray-700">
                 <img src="@/assets/img/walletIcon.svg" alt="">
 
                 <span class="font-medium text-sm"> Wallet </span>
               </a>
 
+              <nuxt-link :class="[$route.path === '/profile' ? 'bg-green-500 text-white' : '']" to="/profile"
+                class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700">
+                <img src="@/assets/img/user_profile.svg" class="h-6 w-6" alt="">
+
+                <span class="font-medium text-sm"> Profile </span>
+              </nuxt-link>
+
               <div @click="logout" class="flex items-center gap-2 bg-white p-4 hover:bg-gray-50">
                 <img src="@/assets/img/signOutIcon.svg" alt="">
 
                 <div>
-                  <p class="font-extralight">Sign Out</p>
+                  <p class="font-extralight text-sm">Sign Out</p>
                 </div>
               </div>
             </nav>
@@ -177,8 +185,13 @@
 <script>
 import swal from "sweetalert2/dist/sweetalert2.js";
 export default {
+  data () {
+    return {
+      user: {}
+    }
+  },
   methods: {
-    logout() {
+    logout () {
       swal.fire({
         title: "Logout?",
         text: "Are you sure you want to Logout?",
@@ -188,6 +201,10 @@ export default {
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, logout!",
       }).then((res) => {
+        if (process.client) {
+          localStorage.removeItem('user')
+        };
+
         if (res.value) {
           swal.fire(
             {
@@ -204,8 +221,16 @@ export default {
               icon: "info"
             })
         }
-
       })
+    }
+  },
+  mounted() {
+    const user = localStorage.getItem('user');
+    this.user = user ? JSON.parse(user) : '';
+    if (this.user) {
+      return
+    } else {
+      this.$router.push('/');
     }
   }
 

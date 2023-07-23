@@ -66,7 +66,7 @@
               <button :class="[currentTab === appointment ? 'text-teal-600' : '']" class="tracking-wide"
                 @click="currentTab = appointment">
                 <div class="flex justify-center items-center flex-col">
-                  <p>{{ appointment }}</p>
+                  <p class="text-xs md:text-base">{{ appointment }}</p>
                   <div class="flex justify-center items-center">
                     <p v-if="currentTab === appointment"
                       class="w-10 h-1  bg-teal-600 absolute bottom-0 flex justify-center items-center rounded-tr-lg rounded-tl-lg" />
@@ -152,9 +152,9 @@
                 </div>
               </main>
             </main>
-            <main v-else class="flex justify-center items-center flex-col space-y-6 md:mt-32 py-32">
+            <main v-else class="flex justify-center items-center flex-col space-y-6 mt-20 md:mt-32 md:py-32">
               <div><img src="@/assets/img/empty-state.svg" alt=""></div>
-              <p style="color : #353F50">
+              <p style="color : #353F50" class="text-sm md:text-base">
                 ⏱ No upcoming appointments!
               </p>
             </main>
@@ -170,10 +170,10 @@
                     </div>
                     <div class="space-y-6 flex-grow">
                       <div class="space-y-1">
-                        <h1 class="text-gray-700 text-sm md:text-base font-thin tracking-wide">
+                        <h1 class="text-gray-700 text-xs md:text-base font-thin tracking-wide">
                           {{ pastAppointment.physician }}
                         </h1>
-                        <p class="text-gray-500 text-xs">
+                        <p class="text-gray-500 text-xs md:text-xs">
                           {{ pastAppointment.physicianPosition }}
                         </p>
                       </div>
@@ -237,7 +237,7 @@
             </main>
             <main v-else class="flex justify-center items-center flex-col space-y-6 mt-32">
               <div><img src="@/assets/img/empty-state.svg" alt=""></div>
-              <p style="color : #353F50">
+              <p style="color : #353F50" class="text-xs md:text-base">
                 ⏱ No past appointments!
               </p>
             </main>
@@ -637,6 +637,7 @@ export default {
   data() {
     return {
       showSidebar: false,
+      user: {},
       showAppointmentForm: false,
       upcomingAppointments: [
       ],
@@ -749,6 +750,13 @@ export default {
         .finally(() => {
           this.processing = false
         })
+    }
+  },
+  mounted() {
+    const user = localStorage.getItem('user');
+    this.user = user ? JSON.parse(user) : '';
+    if (!this.user) {
+      this.$router.push('/');
     }
   }
 }
