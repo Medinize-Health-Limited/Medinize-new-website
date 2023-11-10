@@ -130,7 +130,8 @@ export default {
         if (process.client) {
           localStorage.setItem('user', JSON.stringify(res.data))
         }
-        this.$router.push('/dashboard')
+        window.open('https://medinize-community.netlify.app/', '_parent')
+        // this.$router.push('/dashboard')
       }).catch((error) => {
         this.errorMessage = error && error?.response?.data?.error
       }).finally(() => {

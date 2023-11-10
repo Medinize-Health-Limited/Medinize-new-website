@@ -31,7 +31,8 @@
                   </nuxt-link>
                 </li>
                 <li>
-                  <a class="text-[#1E1E1E] transition hover:text-gray-500/75" href="https://medinize-community.netlify.app/" target="_self">Community</a>
+                  <a class="text-[#1E1E1E] transition hover:text-gray-500/75"
+                    href="https://medinize-community.netlify.app/" target="_self">Community</a>
                 </li>
 
                 <li>
@@ -52,7 +53,8 @@
           <div class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
               <div class="hidden sm:flex">
-                <nuxt-link class="rounded-full px-5 py-2.5 text-sm font-medium text-gray-600 border-2 border-[#13B859] shadow"
+                <nuxt-link
+                  class="rounded-full px-5 py-2.5 text-sm font-medium text-gray-600 border-2 border-[#13B859] shadow"
                   to="/login">
                   Login
                 </nuxt-link>
@@ -88,8 +90,9 @@
           <li><a href="#services" class="text-white font-medium">Services</a></li>
           <li><nuxt-link to="/faq" class="text-white font-medium">FAQs</nuxt-link></li>
           <li><a href="#contact" class="text-white font-medium">Contact</a></li> -->
-          <li><address  href="https://medinii.netlify.app/login" class="text-white font-medium">Login</address></li>
-         <div class="pt-6"> <a href="https://medinii.netlify.app/sign-up" class="text-white w-full bg-green-400 rounded-md px-20 py-2.5">Sign Up</a></div>
+          <li><nuxt-link to="/login" class="text-white font-medium">Login</nuxt-link></li>
+          <div class="pt-6"> <nuxt-link to="/sign-up" class="text-white w-full bg-green-400 rounded-md px-20 py-2.5">Sign
+              Up</nuxt-link></div>
         </ul>
       </section>
     </div>
@@ -98,7 +101,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       showNavbar: false
     }

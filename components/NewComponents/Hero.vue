@@ -6,15 +6,16 @@
           Accelerate your Health Plans with <span class="text-[#0A7D08]">Medinize</span>
         </h1>
         <p class="text-[#121212] font-thin text-sm leading-loose">
-          Our platform enables patients to easily manage health care needs from the comfort of their homes and have easy access to medical services. Unlock the power of medinize and accelerate towards a healthier future.
+          Our platform enables patients to easily manage health care needs from the comfort of their homes and have easy
+          access to medical services. Unlock the power of medinize and accelerate towards a healthier future.
         </p>
         <div class="space-x-6">
-          <a href="https://medinii.netlify.app/login" target="_self" class="bg-[#0A7D08] text-white rounded-md text-xs px-3 py-2.5">
+          <nuxt-link to="/login" class="bg-[#0A7D08] text-white rounded-md text-xs px-3 py-2.5">
             Book an Appointment
-          </a>
-          <a  href="https://medinii.netlify.app/login" target="_self" class="text-[#0A7D08] border-[0.4px] border-[#0A7D08] rounded-md text-xs px-3 py-2.5">
+          </nuxt-link>
+          <nuxt-link to="/login" class="text-[#0A7D08] border-[0.4px] border-[#0A7D08] rounded-md text-xs px-3 py-2.5">
             Apply as a Doctor
-          </a>
+          </nuxt-link>
         </div>
       </div>
       <div class="w-7/12 absolute z-50 top-6 left-[500px]">
@@ -27,18 +28,21 @@
           Accelerate your Health Plans with <span class="text-[#0A7D08]">Medinize</span>
         </h1>
         <p class="text-[#121212] text-sm font-medium leading-loose text-center">
-          Our platform enables patients to easily manage health care needs from the comfort of their homes and have easy access to medical services. Unlock the power of medinize and accelerate towards a healthier future.
+          Our platform enables patients to easily manage health care needs from the comfort of their homes and have easy
+          access to medical services. Unlock the power of medinize and accelerate towards a healthier future.
         </p>
         <div class="space-y-6 w-full">
           <div class="w-full">
-            <a href="https://medinii.netlify.app/login" target="_self" class="bg-[#0A7D08] font-semibold text-center  w-full text-white rounded-md text-xs px-3 py-3 block">
+            <nuxt-link to="/login"
+              class="bg-[#0A7D08] font-semibold text-center  w-full text-white rounded-md text-xs px-3 py-3 block">
               Book an Appointment
-            </a>
+            </nuxt-link>
           </div>
           <div class="w-full mt-10">
-            <a href="https://medinii.netlify.app/login" target="_self" class="text-[#0A7D08] font-semibold  w-full border-[0.7px] border-[#0A7D08] rounded-md text-xs px-3 py-3 block text-center">
+            <nuxt-link to="/login"
+              class="text-[#0A7D08] font-semibold  w-full border-[0.7px] border-[#0A7D08] rounded-md text-xs px-3 py-3 block text-center">
               Apply as a Doctor
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>

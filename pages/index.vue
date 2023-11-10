@@ -31,7 +31,11 @@
                   </a>
                 </li>
                 <li>
-                  <a class="text-[#1E1E1E] transition hover:text-gray-500/75" href="https://medinize-community.netlify.app/" target="_self">Community</a>
+                  <a
+                    class="text-[#1E1E1E] transition hover:text-gray-500/75"
+                    href="https://medinize-community.netlify.app/"
+                    target="_self"
+                  >Community</a>
                 </li>
 
                 <li>
@@ -52,22 +56,17 @@
           <div class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
               <div class="hidden sm:flex">
-                <a
+                <nuxt-link
                   class="rounded-full px-5 py-2.5 text-sm font-medium text-gray-600 border-2 border-[#13B859] shadow"
-                  href="https://medinii.netlify.app/login"
-                  target="_self"
+                  to="/login"
                 >
                   Login
-                </a>
+                </nuxt-link>
               </div>
               <div class="hidden sm:flex">
-                <a
-                  href="https://medinii.netlify.app/sign-up"
-                  target="_self"
-                  class="rounded-full bg-[#13B859] text-white px-5 py-2.5 text-sm font-medium"
-                >
+                <nuxt-link to="/sign-up" class="rounded-full bg-[#13B859] text-white px-5 py-2.5 text-sm font-medium">
                   Sign Up
-                </a>
+                </nuxt-link>
               </div>
             </div>
 
@@ -110,12 +109,15 @@
           </li>
           <li><a href="#contact" class="text-white font-medium">Contact</a></li>
           <li>
-            <address href="https://medinii.netlify.app/login" class="text-white font-medium">
+            <nuxt-link to="/login" class="text-white font-medium">
               Login
-            </address>
+            </nuxt-link>
           </li>
           <div class="pt-6">
-            <a href="https://medinii.netlify.app/sign-up" class="text-white w-full bg-green-400 rounded-md px-20 py-2.5">Sign Up</a>
+            <nuxt-link
+              to="/sign-up"
+              class="text-white w-full bg-green-400 rounded-md px-20 py-2.5"
+            >Sign Up</nuxt-link>
           </div>
         </ul>
       </section>
