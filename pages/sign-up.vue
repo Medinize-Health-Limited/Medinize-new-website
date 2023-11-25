@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     next() {
-      this.$router.push('/')
+      this.$router.push('/login')
       // this.currentStep += 1;
     },
     previous() {

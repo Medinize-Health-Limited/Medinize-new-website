@@ -6,7 +6,7 @@
           <div>
             <div class="justify-center sm:justify-start space-y-2">
               <div>
-                <img src="@/assets/img/medinize-logo.svg" alt="" class="w-32">
+                <img src="@/assets/img/new-logo.png" alt="" class="w-32">
               </div>
               <p class="leading-relaxed text-sm text-gray-500 sm:max-w-xs sm:text-left">
                 (+234)808729002
@@ -184,7 +184,7 @@
           <div>
             <div class="justify-center sm:justify-start space-y-2">
               <div>
-                <img src="@/assets/img/medinize-logo.svg" alt="" class="w-32">
+                <img src="@/assets/img/new-logo.png" alt="" class="w-32">
               </div>
               <p class="leading-relaxed text-sm text-gray-500 sm:max-w-xs sm:text-left">
                 (+234)808729002

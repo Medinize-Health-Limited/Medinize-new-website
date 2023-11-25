@@ -16,7 +16,8 @@ export default {
     if (!this.user) {
       return
     } else {
-      this.$router.push('dashboard');
+      // this.$router.push('dashboard');
+      window.open('https://medinize-community.netlify.app/', '_parent')
     }
     this.setPageData();
   },

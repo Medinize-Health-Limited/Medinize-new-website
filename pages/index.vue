@@ -1,12 +1,12 @@
 <template>
   <main>
     <header class="bg-[#F3F5F6]">
-      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-screen-xl pr-4 sm:pr-6 lg:pr-8">
         <div class="flex h-16 items-center justify-between">
           <div class="md:flex md:items-center md:gap-12">
             <a class="block text-teal-600" href="/">
               <span class="sr-only">Home</span>
-              <img src="@/assets/img/logo.png" alt="" class="h-12">
+              <img src="@/assets/img/new-logo.png" alt="" class="h-20">
             </a>
           </div>
 
@@ -94,7 +94,7 @@
     <div class="w-11/12 mx-auto">
       <section v-if="showNavbar" class="absolute top-2 bg-black lg:hidden z-50 w-11/12 mx-auto rounded-lg p-6 space-y-6">
         <div class="flex justify-between items-center">
-          <div><img src="@/assets/img/logo.png" alt="" class="h-"></div>
+          <div><img src="@/assets/img/new-logo.png" alt="" class="h-20"></div>
           <div class="rounded-full cursor-pointer bg-white shadow-lg p-2 px-3" @click="showNavbar = !showNavbar">
             X
           </div>

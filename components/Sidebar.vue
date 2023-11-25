@@ -3,7 +3,7 @@
     <div class="hidden md:block flex h-screen flex-col justify-between border-e bg-gray-50">
       <div class="px-4 py-6">
         <div class="place-content-center flex justify-center items-center">
-          <img src="@/assets/img/logo.png" alt="" class="rounded-full object-cover h-20">
+          <img src="@/assets/img/new-logo.png" alt="" class="rounded-full object-cover h-20">
         </div>
 
         <nav aria-label="Main Nav" class="mt-6 flex flex-col space-y-6 hidden md:block">
@@ -89,7 +89,7 @@
     <div class="md:hidden flex justify-between px-3 py-2 items-center w-full">
       <div>
         <span class="place-content-center">
-          <img src="@/assets/img/logo.png" alt="" class="h-16"></img>
+          <img src="@/assets/img/new-logo.png" alt="" class="h-16">
         </span>
       </div>
       <div>
@@ -116,7 +116,7 @@
         <template #default="{ hide }">
           <div class="flex justify-between items-center py-3 w-11/12 mx-auto">
             <div class="w-full">
-              <img src="@/assets/img/logo.png" alt="" class="h-16">
+              <img src="@/assets/img/new-logo.png" alt="" class="h-16">
             </div>
             <div>
               <svg

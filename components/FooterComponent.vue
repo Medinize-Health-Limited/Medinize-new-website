@@ -10,7 +10,7 @@
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="lg:flex lg:items-start lg:gap-8">
         <div class="text-teal-600">
-          <img src="@/assets/img/logo.png" alt="" class="h-12 w-20" />
+          <img src="@/assets/img/new-logo.png" alt="" class="h-12 w-20" />
         </div>
 
         <div class="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">

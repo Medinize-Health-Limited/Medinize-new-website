@@ -6,7 +6,7 @@
           <div class="md:flex md:items-center md:gap-12">
             <a class="block text-teal-600" href="/">
               <span class="sr-only">Home</span>
-              <img src="@/assets/img/logo.png" alt="" class="h-12">
+              <img src="@/assets/img/new-logo.png" alt="" class="h-12">
             </a>
           </div>
 
@@ -82,7 +82,7 @@
     <div class="w-11/12 mx-auto">
       <section v-if="showNavbar" class="absolute top-2 bg-black lg:hidden z-50 w-11/12 mx-auto rounded-lg p-6 space-y-6">
         <div class="flex justify-between items-center">
-          <div><img src="@/assets/img/logo.png" alt="" class="h-" /></div>
+          <div><img src="@/assets/img/new-logo.png" alt="" class="h-" /></div>
           <div @click="showNavbar = !showNavbar" class="rounded-full cursor-pointer bg-white shadow-lg p-2 px-3">X</div>
         </div>
         <ul class="space-y-6 z-50">
