@@ -56,7 +56,7 @@
           </a>
 
           <a
-            href="https://medinize-community.netlify.app/"
+            href="https://medinize-communities.netlify.app/"
             target="_self"
             class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700"
           >
