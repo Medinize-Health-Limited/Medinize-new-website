@@ -17,7 +17,7 @@ export default {
       return
     } else {
       // this.$router.push('dashboard');
-      window.open('https://medinize-community.netlify.app/', '_parent')
+      window.open('https://medinize-communities.netlify.app/', '_parent')
     }
     this.setPageData();
   },
