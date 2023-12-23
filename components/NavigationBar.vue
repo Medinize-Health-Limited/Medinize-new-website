@@ -32,7 +32,7 @@
                 </li>
                 <li>
                   <a class="text-[#1E1E1E] transition hover:text-gray-500/75"
-                    href="https://medinize-community.netlify.app/" target="_self">Community</a>
+                    href="https://medinize-communities.netlify.app/" target="_self">Community</a>
                 </li>
 
                 <li>
