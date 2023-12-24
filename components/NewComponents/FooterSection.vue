@@ -114,7 +114,7 @@
                 <li>
                   <a
                     class="text-gray-700 transition hover:text-gray-700/75"
-                    href="https://medinize-community.netlify.app/"
+                    href="https://medinize-communities.netlify.app/"
                     target="_self"
                   >
                     community
@@ -292,7 +292,7 @@
                 <li>
                   <a
                     class="text-gray-700 transition hover:text-gray-700/75"
-                    href="https://medinize-community.netlify.app/"
+                    href="https://medinize-communities.netlify.app/"
                     target="_self"
                   >
                     community

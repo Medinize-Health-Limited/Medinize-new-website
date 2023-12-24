@@ -44,7 +44,7 @@
               </div>
             </div>
 
-            <div v-for="(item, index) in patientServices" :key="index" class="bg-white border-[0.7px] shadow-md p-3 rounded-md gap-x-4 lg:hidden flex justify-center items-center flex-col gap-y-3">
+            <div v-for="item in patientServices" :key="item.id" class="bg-white border-[0.7px] shadow-md p-3 rounded-md gap-x-4 lg:hidden flex justify-center items-center flex-col gap-y-3">
               <div>
                 <img :src="require(`~/assets/img/${item.imgUrl}.svg`)" class="h-6 w-6" alt="">
               </div>
@@ -73,21 +73,25 @@ export default {
     return {
       patientServices: [
         {
+          id: 1,
           title: 'Virtual Consultations',
           description: 'Medinize enables you conduct virtual consultations with patients from anywhere.',
           imgUrl: 'virtual-consultation'
         },
         {
+          id: 2,
           title: 'Appointment Management',
           description: 'Medinize enables you to manage your appointments and availability in one place.',
           imgUrl: 'appointment-management'
         },
         {
+          id: 3,
           title: 'Flexible Way To Earn Extra Income',
           description: 'Medinize is a convenient and easy way to make extra income, expand your reach and improve your skills.',
           imgUrl: 'extra-income'
         },
         {
+          id: 4,
           title: 'Real-Time Updates',
           description: 'With Medinize, you can receive real-time updates on appointment requests, patient messages and important notifications. ',
           imgUrl: 'real-time-updates'

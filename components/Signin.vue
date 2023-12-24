@@ -5,7 +5,7 @@
         <form class="space-y-6 p-6 py-10 rounded-xl" @submit.prevent="handleLogin">
           <div class="space-y-3">
             <h1 class="text-center text-lg md:text-xl font-black">
-              Sign In 🥰
+              Sign In 🥰 {{ currentUser }} ss
             </h1>
             <p class="text-center text-xs xl:text-sm">
               Enjoy
@@ -15,7 +15,7 @@
           </div>
 
           <div
-            v-if="errorMessage.length"
+            v-if="errorMessage"
             class="flex justify-center items-center rounded-lg border bg-red-200 border-red-500 px-3 py-2 p-2"
           >
             <span class="text-xs text-center text-red-500 ">{{
@@ -89,8 +89,9 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  name: 'Signin',
+  name: 'SigninPage',
   data () {
     return {
       processing: false,
@@ -103,8 +104,9 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['currentUser']),
     isFormValid () {
-      return !!(this.form.email.length && this.form.password.length)
+      return !!(this.form.email && this.form.password)
     }
   },
   watch: {
@@ -119,7 +121,11 @@ export default {
       }
     }
   },
+  mounted () {
+    console.log(this.$store)
+  },
   methods: {
+    ...mapActions([]),
     togglePasswordVisibility () {
       console.log('you clicked')
       this.showPassword = !this.showPassword
@@ -127,12 +133,13 @@ export default {
     handleLogin () {
       this.processing = true
       this.$axios.post('https://medinize-apis.onrender.com/login/', this.form).then((res) => {
-        if (process.client) {
-          localStorage.setItem('user', JSON.stringify(res.data))
-        }
-        localStorage.setItem('user', JSON.stringify(res.data))
-        window.open('https://medinize-community.netlify.app/', '_parent')
-        // this.$router.push('/dashboard')
+        console.log(this.$store, 'here')
+        // this.$store.dispatch('authenticateUser', { user: res.data })
+        // if (process.client) {
+        //   localStorage.setItem('user', JSON.stringify(res.data))
+        // }
+        // localStorage.setItem('user', JSON.stringify(res.data))
+        // window.open('https://medinize-community.netlify.app/', '_parent')
       }).catch((error) => {
         this.errorMessage = error && error?.response?.data?.error
       }).finally(() => {

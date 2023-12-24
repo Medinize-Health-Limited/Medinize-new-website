@@ -13,13 +13,12 @@ export default {
   mounted() {
     const user = localStorage.getItem('user');
     this.user = user ? JSON.parse(user) : '';
-    if (!this.user) {
-      return
-    } else {
-      // this.$router.push('dashboard');
-      window.open('https://medinize-community.netlify.app/', '_parent')
-    }
-    this.setPageData();
+    // if (!this.user) {
+    //   return
+    // } else {
+    //   window.open('https://medinize-community.netlify.app/', '_parent')
+    // }
+    // this.setPageData();
   },
 }
 </script>

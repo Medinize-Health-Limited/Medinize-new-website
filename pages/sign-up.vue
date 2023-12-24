@@ -41,15 +41,15 @@ export default {
     };
   },
   mounted() {
-    const user = localStorage.getItem('user');
-    console.log(user);
-    this.user = user ? JSON.parse(user) : '';
-    if (!this.user) {
-      return
-    } else {
-      this.$router.push('dashboard');
-    }
-    this.setPageData();
+    // const user = localStorage.getItem('user');
+    // console.log(user);
+    // this.user = user ? JSON.parse(user) : '';
+    // if (!this.user) {
+    //   return
+    // } else {
+    //   this.$router.push('dashboard');
+    // }
+    // this.setPageData();
   },
   methods: {
     next() {
