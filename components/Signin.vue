@@ -89,7 +89,6 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'SigninPage',
   data () {
@@ -104,7 +103,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['currentUser']),
     isFormValid () {
       return !!(this.form.email && this.form.password)
     }
@@ -121,11 +119,7 @@ export default {
       }
     }
   },
-  mounted () {
-    console.log(this.$store)
-  },
   methods: {
-    ...mapActions([]),
     togglePasswordVisibility () {
       console.log('you clicked')
       this.showPassword = !this.showPassword
@@ -133,7 +127,6 @@ export default {
     handleLogin () {
       this.processing = true
       this.$axios.post('https://medinize-apis.onrender.com/login/', this.form).then((res) => {
-        console.log(this.$store, 'here')
         // this.$store.dispatch('authenticateUser', { user: res.data })
         // if (process.client) {
         //   localStorage.setItem('user', JSON.stringify(res.data))

@@ -56,17 +56,16 @@
           <div class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
               <div class="hidden sm:flex">
-                <button
+                <a href="https://medinize-communities.netlify.app/"
                   class="rounded-full px-5 py-2.5 text-sm font-medium text-gray-600 border-2 border-[#13B859] shadow"
-                  @click="handleLogin"
                 >
                   Login
-                </button>
+                </a>
               </div>
               <div class="hidden sm:flex">
-                <nuxt-link class="rounded-full bg-[#13B859] text-white px-5 py-2.5 text-sm font-medium" to="/sign-up">
+                <a href="https://medinize-communities.netlify.app/signup" class="rounded-full bg-[#13B859] text-white px-5 py-2.5 text-sm font-medium" to="/sign-up">
                   Sign Up
-                </nuxt-link>
+                </a>
               </div>
             </div>
 
@@ -100,20 +99,16 @@
           </div>
         </div>
         <ul class="space-y-6 z-50">
-          <!-- <li><a href="#aboutUs" class="text-white font-medium">About</a></li>
-          <li><a href="#services" class="text-white font-medium">Services</a></li>
-          <li><nuxt-link to="/faq" class="text-white font-medium">FAQs</nuxt-link></li>
-          <li><a href="#contact" class="text-white font-medium">Contact</a></li> -->
           <li>
-            <nuxt-link to="/login" class="text-white font-medium">
+            <a href="https://medinize-communities.netlify.app/" class="text-white font-medium">
               Login
-            </nuxt-link>
+            </a>
           </li>
           <div class="pt-6">
-            <nuxt-link to="/sign-up" class="text-white w-full bg-green-400 rounded-md px-20 py-2.5">
+            <a href="https://medinize-communities.netlify.app/signup" class="text-white w-full bg-green-400 rounded-md px-20 py-2.5">
               Sign
               Up
-            </nuxt-link>
+            </a>
           </div>
         </ul>
       </section>

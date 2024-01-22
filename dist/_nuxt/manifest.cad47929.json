@@ -1,0 +1,12 @@
+{
+  "name": "Medinize Accessible Health",
+  "short_name": "Medinize Accessible Health",
+  "description": "Innovating Health Services",
+  "icons": [],
+  "start_url": "/?standalone=true",
+  "display": "standalone",
+  "background_color": "#8B4E96",
+  "theme_color": "#8B4E96",
+  "lang": "en",
+  "orientation": "portrait"
+}

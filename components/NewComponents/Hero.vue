@@ -10,12 +10,12 @@
           access to medical services. Unlock the power of medinize and accelerate towards a healthier future.
         </p>
         <div class="space-x-6">
-          <nuxt-link to="/login" class="bg-[#0A7D08] text-white rounded-md text-xs px-3 py-2.5">
+          <a href="https://medinize-communities.netlify.app/" class="bg-[#0A7D08] text-white rounded-md text-xs px-3 py-2.5">
             Book an Appointment
-          </nuxt-link>
-          <nuxt-link to="/login" class="text-[#0A7D08] border-[0.4px] border-[#0A7D08] rounded-md text-xs px-3 py-2.5">
+          </a>
+          <a href="https://medinize-communities.netlify.app/" class="text-[#0A7D08] border-[0.4px] border-[#0A7D08] rounded-md text-xs px-3 py-2.5">
             Apply as a Doctor
-          </nuxt-link>
+          </a>
         </div>
       </div>
       <div class="w-7/12 absolute z-50 top-6 left-[500px]">
@@ -33,16 +33,16 @@
         </p>
         <div class="space-y-6 w-full">
           <div class="w-full">
-            <nuxt-link to="/login"
+            <a href="https://medinize-communities.netlify.app/"
               class="bg-[#0A7D08] font-semibold text-center  w-full text-white rounded-md text-xs px-3 py-3 block">
               Book an Appointment
-            </nuxt-link>
+            </a>
           </div>
           <div class="w-full mt-10">
-            <nuxt-link to="/login"
+            <a href="https://medinize-communities.netlify.app/"
               class="text-[#0A7D08] font-semibold  w-full border-[0.7px] border-[#0A7D08] rounded-md text-xs px-3 py-3 block text-center">
               Apply as a Doctor
-            </nuxt-link>
+            </a>
           </div>
         </div>
       </div>

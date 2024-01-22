@@ -14,40 +14,40 @@
 </template>
 
 <script>
-import ForgotPasswordForm from "@/components/ForgotPassword/ForgotPasswordForm.vue";
-import ForgotPasswordModal from "@/components/ForgotPassword/ForgotPasswordModal.vue";
+import ForgotPasswordForm from '@/components/ForgotPassword/ForgotPasswordForm.vue'
+import ForgotPasswordModal from '@/components/ForgotPassword/ForgotPasswordModal.vue'
 export default {
   components: {
     ForgotPasswordForm,
-    ForgotPasswordModal,
+    ForgotPasswordModal
   },
-  data() {
+  data () {
     return {
       currentStep: 0,
       forgotPasswordSteps: [
         {
-          title: "forgotPasswordForm",
-          component: ForgotPasswordForm,
+          title: 'forgotPasswordForm',
+          component: ForgotPasswordForm
         },
         {
-          title: "forgotPasswordEmailSuccessModal",
-          component: ForgotPasswordModal,
-        },
-      ],
-    };
+          title: 'forgotPasswordEmailSuccessModal',
+          component: ForgotPasswordModal
+        }
+      ]
+    }
   },
-  mounted() {
-    this.setPageData();
+  mounted () {
+    this.setPageData()
   },
   methods: {
-    next() {
-      this.currentStep += 1;
+    next () {
+      this.currentStep += 1
     },
-    setPageData() {
-      this.currentStep = 0;
-    },
-  },
-};
+    setPageData () {
+      this.currentStep = 0
+    }
+  }
+}
 </script>
 
 <style scoped>
